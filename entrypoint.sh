@@ -10,9 +10,9 @@ echo "GITHUB_REF:        ${GITHUB_REF}"
 echo "GITHUB_HEAD_REF:   ${GITHUB_HEAD_REF}"
 echo "GITHUB_BASE_REF:   ${GITHUB_BASE_REF}"
 
-echo "T1"
-
 cd "$GITHUB_WORKSPACE"
+
+ls -la
 git fetch --quiet
 
 if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]] 
