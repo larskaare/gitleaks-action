@@ -2,7 +2,7 @@
 
 set -e # Abort script at first error
 set -u # nounset - Attempt to use undefined variable outputs error message, and forces an exit
-set -x # verbose (expands commands)
+#set -x # verbose (expands commands)
 
 echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
 echo "GITHUB_SHA:        ${GITHUB_SHA}"
@@ -12,7 +12,6 @@ echo "GITHUB_BASE_REF:   ${GITHUB_BASE_REF}"
 
 cd "$GITHUB_WORKSPACE"
 
-ls -la
 git fetch --quiet
 
 if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]] 
