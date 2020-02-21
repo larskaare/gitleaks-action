@@ -18,7 +18,8 @@ then
     gitleaks -v --exclude-forks --redact --threads=1 \
       --branch=$GITHUB_HEAD_REF \
       --commit-to=$GITHUB_BASE_REF \
-      --repo-path=$GITHUB_WORKSPACE
+      --repo-path=$GITHUB_WORKSPACE \
+      --verbose
 else
     # branch/tag name in the form "refs/<ref-type>/<ref-id>[/<ref-subtype>]"
     # ref-type: heads|pull|tags
@@ -32,13 +33,13 @@ else
         gitleaks -v --exclude-forks --redact --threads=1 \
           --branch=$GITHUB_REF_NAME \
           --depth=1 \
-          --repo-path=$GITHUB_WORKSPACE
+          --repo-path=$GITHUB_WORKSPACE \
           --verbose
     else        
         gitleaks -v --exclude-forks --redact --threads=1 \
           --branch=$GITHUB_REF_NAME \
           --commit-to=$GITHUB_REF_MASTER \
-          --repo-path=$GITHUB_WORKSPACE
+          --repo-path=$GITHUB_WORKSPACE \
           --verbose
     fi
 fi
