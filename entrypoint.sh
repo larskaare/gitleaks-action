@@ -33,11 +33,13 @@ else
           --branch=$GITHUB_REF_NAME \
           --depth=1 \
           --repo-path=$GITHUB_WORKSPACE
+          --verbose
     else        
         gitleaks -v --exclude-forks --redact --threads=1 \
           --branch=$GITHUB_REF_NAME \
           --commit-to=$GITHUB_REF_MASTER \
           --repo-path=$GITHUB_WORKSPACE
+          --verbose
     fi
 fi
 
